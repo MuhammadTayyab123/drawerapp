@@ -4,16 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity2 extends AppCompatActivity {
 
     int marks;
     String[] data;
     int j;
+
+    public int counter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +31,22 @@ public class MainActivity2 extends AppCompatActivity {
         show(0);
 
 
+        final TextView counttime=findViewById(R.id.counttime);
+        new CountDownTimer(50000,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                counttime.setText(String.valueOf(counter));
+                counter++;
+            }
+            @Override
+            public void onFinish() {
+                Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
+                intent.putExtra("result",Integer.toString(marks));
+                startActivity(intent);
+            }
+        }.start();
     }
+
 
     public void show(int i) {
         TextView textView = findViewById(R.id.textView2);
