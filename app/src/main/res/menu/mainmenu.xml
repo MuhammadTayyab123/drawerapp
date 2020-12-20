@@ -5,7 +5,7 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_chrome_reader"
+                    android:id="@+id/nav_calculator"
                     android:icon="@drawable/ic_baseline_apps_24"
                     android:title="Calculator App" />
 
@@ -17,7 +17,7 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/Nav_add_comment"
+                    android:id="@+id/nav_quiz"
                     android:icon="@drawable/ic_baseline_apps_25"
                     android:title="Quiz App" />
 
